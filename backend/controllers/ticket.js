@@ -1,4 +1,3 @@
-const ticket = require('../models/ticket');
 const Ticket = require('../models/ticket');
 
 exports.createTicket = (req, res, next) => {
