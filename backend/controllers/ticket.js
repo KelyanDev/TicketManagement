@@ -63,15 +63,31 @@ exports.modifyTicket = (req, res, next) => {
 };
 
 exports.deleteTicket = (req, res, next) => {
-    Ticket.deleteOne({ _id: req.params.id}).then(
-        () => res.status(200).json({
-            message: 'Ticket deleted successfully !'
-        })
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
+    Ticket.findOne({ _id: req.params.id }).then(
+        (ticket) => {
+            if (!ticket) {
+                res.status(404).json({
+                    error: new Error('Pas de ticket !')
+                });
+            }
+            if (ticket.userId !== req.auth.userId) {
+                res.status(400).json({
+                    error: new Error('requête non autorisé !')
+                });
+            }
+            Ticket.deleteOne({ _id: req.params.id }).then(
+                () => {
+                    res.status(200).json({
+                        message: 'supprimé!'
+                    });
+                }
+            ).catch(
+                (error) => {
+                    res.status(400).json({
+                        error: error
+                    });
+                }
+            );
         }
     );
 };
