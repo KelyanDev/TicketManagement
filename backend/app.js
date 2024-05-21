@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ticketRoutes = require('./routes/ticket');
 const userRoutes = require('./routes/User');
+const path = require('path');
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -22,6 +23,8 @@ mongoose.connect('mongodb+srv://maBase:admin@cluster.ud5pfq5.mongodb.net/?retryW
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
+/* Importation des routes */
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/ticket', ticketRoutes);
 app.use('/api/auth', userRoutes);
 
