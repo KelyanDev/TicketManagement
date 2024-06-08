@@ -2,7 +2,6 @@ const Ticket = require('../models/ticket');
 const fs = require('fs');
 
 exports.createTicket = (req, res, next) => {
-    console.info(req.body);
     const ticketObjet = JSON.parse(req.body.ticket);
     delete ticketObjet._id;
     const ticket = new Ticket({
@@ -62,6 +61,19 @@ exports.deleteTicket = (req, res, next) => {
             });
     })
     .catch(error => res.status(500).json({ error }));
+};
+
+exports.getOwnedTicket = (req, res, next) => {
+    Ticket.find({ userId: req.params.userId })
+    .then((tickets) => {
+        res.status(200).json(tickets)
+    }).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
 };
 
 exports.getAllTicket = (req, res, next) => {

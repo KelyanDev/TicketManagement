@@ -1,0 +1,553 @@
+/* Google Font Import - IBM Plex Sans Thaï Looped */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&display=swap');
+
+*{
+	font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-size: 20px;
+}
+
+:root{
+	/* ===== Couleurs Primaires ===== */
+	--primary-color: #354E52;
+  --navbar-color: #527970;
+  --primary-color-dark: #2F3D46;
+  --secondary-color-light: #84A98D;
+  --body-color: #CAD2C5;
+  --delete-color: #a20707;
+  --delete-hover: #d10404;
+
+  /* ===== Couleurs Secondaires ===== */
+  --border-color: #707070;
+  --nav-text-color: #DDD;
+
+	/* ===== Transition ===== */
+	--tran-02: all 0.2s ease;
+	--tran-03: all 0.3s ease;
+	--tran-04: all 0.4s ease;
+	--tran-05: all 0.5s ease;
+	--tran-10: all 1.0s ease;
+}
+
+body {
+  height: 100%;
+  background-color: var(--body-color);
+}
+
+.App {
+  height: 100%;
+}
+
+/* ===== Naviguation Barre ===== */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  padding: 10px 14px;
+  padding-right: 0;
+  background-color: var(--navbar-color);
+  border-bottom: solid 2px var(--border-color);
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav .connect{
+  position: fixed;
+  right: 0px;
+  height: 50px;
+	display: flex;
+  flex-direction: row;
+	align-items: center;
+}
+
+.nav .connect-grid {
+  margin-right: 10px;
+}
+
+.nav .text{
+	font-size: 18px;
+	font-weight: 500;
+	color:var(--nav-text-color);
+	transition: var(--tran-03);
+	white-space: nowrap;
+	pointer-events: auto;
+}
+
+.nav li{
+	height: 50px;
+	list-style: none;
+	display: flex;
+	align-items: center;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
+.nav li a{
+	text-decoration: none;
+  width: -moz-fit-content;
+	width: fit-content;
+	height: 80%;
+	display: flex;
+	align-items: center;
+  padding: 15px;
+	border-radius: 50px;
+	transition: var(--tran-04);
+}
+
+.nav a{
+  text-decoration: none;
+  width: -moz-fit-content;
+	width: fit-content;
+	height: 80%;
+	display: flex;
+	align-items: center;
+  padding: 15px;
+	border-radius: 50px;
+	transition: var(--tran-04);
+}
+
+.nav a:hover{
+  background: var(--secondary-color-light);
+}
+
+.nav li a:hover {
+  background: var(--secondary-color-light);
+}
+
+.nav-logo {
+  width: 40%;
+  margin-right: 50px;
+}
+
+/* ===== Contenu Accueil ===== */
+
+.home {
+  padding-top: 4%;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-logo {
+  align-self: center;
+  width: 10%;
+}
+
+.home-titre {
+  text-align: center;
+  color: var(--navbar-color);
+  font-size: 60px;
+}
+
+.home-titre b {
+  font-size: 60px;
+  color: var(--primary-color);
+}
+
+.home-text {
+  text-align: center;
+  color: var(--navbar-color);
+  font-size: 30px;
+}
+
+/* ===== Ticket Displaying ===== */
+
+.ticket-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ticket-card {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rbga(0,0,0,0.1);
+  text-align: center;
+  background-color: var(--secondary-color-light);
+  transition: var(--tran-02);
+}
+
+.ticket-card:hover {
+  transform: scale(1.05);
+}
+
+.ticket-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.ticket-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  color: var(--body-color);
+  background-color: rgba(132, 169, 141, 0.6);
+  padding: 8px;
+}
+
+.ticket-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.ticket-priority {
+  color: var(--primary-color-dark);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ===== Single Ticket Page ===== */
+
+.single-ticket-pane {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  height: 100%;
+}
+
+.single-ticket-title {
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: var(--navbar-color);
+}
+
+.single-ticket-image {
+  width: 900px;
+}
+
+.single-ticket-info {
+  margin-left: 20px;
+}
+
+.single-ticket-priority {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.single-ticket-description {
+  color: var(--primary-color-dark);
+}
+
+.single-ticket-btns {
+  display: flex;
+}
+
+.single-ticket-btns .modify {
+  background-color: var(--primary-color);
+}
+
+.single-ticket-btns .modify:hover {
+  background-color: var(--navbar-color);
+}
+
+.single-ticket-btns .delete {
+  background-color: var(--delete-color);
+}
+
+.single-ticket-btns .delete:hover {
+  background-color: var(--delete-hover);
+}
+
+.btn {
+  width: -moz-fit-content;
+	width: fit-content;
+	display: flex;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: none;
+  cursor: pointer;
+	border-radius: 50px;
+  background-color: var(--navbar-color);
+	transition: var(--tran-04);
+  color: var(--body-color);
+}
+
+.btn:hover{
+  background: var(--secondary-color-light);
+}
+
+/* ===== Authentification ===== */
+
+.auth-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.auth-register-container {
+  position: relative;
+  background-color: var(--secondary-color-light);
+  width: 500px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 75px;
+  border: 2px solid var(--primary-color);
+  border-radius: 40px;
+}
+
+.auth-login-container {
+  position: relative;
+  background-color: var(--secondary-color-light);
+  width: 500px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 75px;
+  border: 2px solid var(--primary-color);
+  border-radius: 40px;
+}
+
+.auth-title {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-res {
+  color: var(--border-color);
+}
+
+.form-group {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  position: relative;
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+.auth-form input {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding-left: 5px;
+  background-color: var(--body-color);
+}
+
+.form-login-btn {
+  font-size: 25px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+	border-radius: 50px;
+  margin-top: 25px;
+  background-color: var(--primary-color);
+	transition: var(--tran-04);
+  color: var(--body-color);
+}
+
+.form-register-btn {
+  font-size: 25px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+	border-radius: 50px;
+  background-color: var(--primary-color);
+	transition: var(--tran-04);
+  color: var(--body-color);
+}
+
+.form-login-btn:hover{
+  background: var(--navbar-color);
+}
+
+.form-register-btn:hover{
+  background: var(--navbar-color);
+}
+
+.auth-form a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.auth-res {
+  color: var(--nav-text-color);
+}
+
+/* ===== LoggedIn ===== */
+
+.logged-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  z-index: 10;
+}
+
+.logged-container .icon {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 45px;
+	min-width: 60px;
+  color: var(--primary-color-dark);
+}
+
+.logged-container {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.logged-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.logged-name {
+  color: var(--primary-color-dark);
+  font-weight: bold;
+}
+
+.logged-arrow {
+  font-size: 30px;
+  color: var(--primary-color-dark);
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
+.logged-list button {
+  background: var(--primary-color);
+  color: var(--nav-text-color);
+  justify-content: center;
+  z-index: 10;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px solid var(--primary-color-dark);
+  border-left: 1px solid var(--primary-color-dark);
+  text-align: center;
+  transition: var(--tran-02);
+}
+
+.logged-list button:hover {
+  background: var(--primary-color-dark);
+  cursor: pointer;
+}
+
+/* ===== Ticket Creation ===== */
+
+.creation-grid {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+}
+
+.creation-container {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+}
+
+.creation-title {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 40px;
+}
+
+.creation-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.creation-form-group {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creation-form-group label {
+  position: relative;
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+.creation-form .input {
+  width: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 5px;
+  background-color: var(--body-color);
+}
+
+.creation-form .uploader {
+  width: 100%;
+  color: var(--navbar-color);
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 5px;
+  background-color: var(--body-color);
+}
+
+.aligned-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.uploaded {
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.uploaded b {
+  font-size: 15px;
+  font-weight: 500;
+}
