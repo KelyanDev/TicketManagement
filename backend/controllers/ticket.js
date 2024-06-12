@@ -11,7 +11,7 @@ exports.createTicket = (req, res, next) => {
     ticket.save().then(
         () => {
             res.status(201).json({
-                message: 'Post saved successfully !'
+                message: 'Ticket ajouté avec succès !'
             });
         }
     ).catch(
@@ -46,7 +46,7 @@ exports.modifyTicket = (req, res, next) => {
             imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
         } : { ...req.body };
     Ticket.updateOne({ _id: req.params.id}, { ...ticketObject, _id: req.params.id })
-    .then(() => res.status(200).json({ message: 'Ticket updated successfully !'}))
+    .then(() => res.status(200).json({ message: 'Ticket modifié avec succès !'}))
     .catch((error) => res.status(400).json({ error }));
 };
 
@@ -56,7 +56,7 @@ exports.deleteTicket = (req, res, next) => {
             const filename = ticket.imageUrl.split('/images/')[1];
             fs.unlink(`images/${filename}`, () => {
                 Ticket.deleteOne({ _id: req.params.id })
-                    .then(() => res.status(200).json({ message: 'Objet supprimé !'}))
+                    .then(() => res.status(200).json({ message: 'Ticket supprimé !'}))
                     .catch((error) => res.status(400).json({ error }));
             });
     })

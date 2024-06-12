@@ -320,7 +320,7 @@ body {
   position: relative;
   background-color: var(--secondary-color-light);
   width: 500px;
-  height: 450px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -343,6 +343,10 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.auth-login-container .error {
+  color: var(--nav-text-color);
 }
 
 .form-res {

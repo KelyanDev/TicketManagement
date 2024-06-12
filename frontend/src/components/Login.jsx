@@ -5,6 +5,7 @@ import { login as loginApi } from "../api/api";
 export default function Login({ login }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const naviguate = useNavigate();
 
     async function handleSubmit(e) {
@@ -22,7 +23,7 @@ export default function Login({ login }) {
             setPassword('');
             naviguate('/');
         } catch (error) {
-            console.log(error)
+            setError(error.message);
         }
     }
 
@@ -41,6 +42,7 @@ export default function Login({ login }) {
                     </div>
                     <p>Pas encore inscrit ? <Link to='/auth/register'>Inscription</Link></p>
                     <button className="btn form-login-btn" type="submit"> Login</button>
+                    <p className="error">{error}</p>
                 </form>
             </div>
         </div>

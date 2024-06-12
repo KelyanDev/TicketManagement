@@ -134,6 +134,6 @@ export const login = async (userData) => {
         return req.json();
 
     } catch (error) {
-        throw new Error('Erreur lors de la connexion ' + error.message)
+        throw new Error(error.message);
     }
 }
