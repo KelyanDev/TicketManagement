@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createTicket } from "../api/api";
+import { useTranslation } from "react-i18next";
 
 export default function CreateTicket() {
     const [title, setTitle] = useState('');
@@ -7,6 +8,7 @@ export default function CreateTicket() {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [res, setRes] = useState('');
+    const { t } = useTranslation();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -36,10 +38,10 @@ export default function CreateTicket() {
     return (
         <div className="creation-grid">
             <div className="creation-container">
-                <h2 className="creation-title"> Créer un ticket </h2>
+                <h2 className="creation-title"> {t('Create.Title')} </h2>
                 <form className="creation-form" onSubmit={handleSubmit}> 
                     <div className="creation-form-group">
-                        <label for="Title"> Titre: </label>
+                        <label for="Title"> {t('Create.Subtitle')}: </label>
                         <input className="input" id="Title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} required></input>
                     </div>
                     <div className="creation-form-group">
@@ -47,14 +49,14 @@ export default function CreateTicket() {
                         <input className="uploader" id="Image" type="file" onChange={(event) => setImage(event.target.files[0])} required></input>
                     </div>
                     <div className="creation-form-group">
-                        <label for="Priority"> Priorité: </label>
+                        <label for="Priority"> {t('Create.Prio')}: </label>
                         <input className="input" id="Priority" type="number" value={priority} onChange={(e) => setPriority(e.target.value)} required></input>
                     </div>
                     <div className="creation-form-group">
                         <label for="Desc"> Description: </label>
                         <textarea className="input" id="Desc" type="text" rows='7' value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
                     </div>
-                    <button className="btn form-register-btn" type="submit"> Valider</button>
+                    <button className="btn form-register-btn" type="submit"> {t('Create.Valid')}</button>
                     <p className="form-res">{res.message}</p>
                 </form>
             </div>

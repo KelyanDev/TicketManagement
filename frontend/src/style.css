@@ -62,12 +62,18 @@ body {
 }
 
 .nav .connect{
-  position: fixed;
-  right: 0px;
-  height: 50px;
+  position: relative;
 	display: flex;
+  height: 100%;
   flex-direction: row;
 	align-items: center;
+  gap: 10px;
+}
+
+.nav .top-right {
+  position: absolute;
+  right: 0px;
+  height: 50px;
 }
 
 .nav .connect-grid {
@@ -127,6 +133,22 @@ body {
 .nav-logo {
   width: 40%;
   margin-right: 50px;
+}
+
+#language-select {
+  font-size: 16px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  border-style: none;
+  color: var(--nav-text-color);
+  cursor: pointer;
+}
+
+.logged-width {
+  width: 200px;
 }
 
 /* ===== Contenu Accueil ===== */
@@ -458,6 +480,7 @@ body {
   color: var(--primary-color-dark);
   margin-left: 10px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .logged-list button {

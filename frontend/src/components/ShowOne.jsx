@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchTicketById } from "../api/api";
+import { useTranslation } from "react-i18next";
 
 export default function OneTicket() {
     const { id } = useParams();
     const naviguate = useNavigate();
     const [ticket, setTicket] = useState(null);
-    const [error, setError] = useState(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const getTicket = async () => {
@@ -14,7 +15,7 @@ export default function OneTicket() {
                 const ticket = await fetchTicketById(id);
                 setTicket(ticket);
             } catch (error) {
-                setError(error.message);
+                console.log(error);
             }
         };
 
@@ -31,9 +32,9 @@ export default function OneTicket() {
                 <img className="single-ticket-image" alt={ticket.title} src={ticket.imageUrl} />
                 <div className="single-ticket-info">
                     <h1 className="single-ticket-title">{ticket.title}</h1>
-                    <h2 className="single-ticket-priority">Priorité: {ticket.priority}</h2>
+                    <h2 className="single-ticket-priority">{t('Create.Prio')}: {ticket.priority}</h2>
                     <p className="single-ticket-description"> {ticket.description}</p>
-                    <button className="btn btn-link" onClick={() => naviguate(-1)}>Retour</button>
+                    <button className="btn btn-link" onClick={() => naviguate(-1)}> {t('Modify.Button-Back')} </button>
                 </div>
             </div>
         </div>
