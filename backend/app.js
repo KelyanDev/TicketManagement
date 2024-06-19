@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 })
 
 /* Connection de la base mongoDB */
-mongoose.connect('mongodb+srv://maBase:admin@cluster.ud5pfq5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster',
+mongoose.connect('mongodb://User:UserPass@192.168.0.110/Autotech?authSource=Autotech',
     { useNewUrlParser: true,
       useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
