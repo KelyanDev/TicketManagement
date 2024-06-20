@@ -1,4 +1,4 @@
-const API_URL = 'http://192.168.0.110:3000/api';
+const API_URL = 'http://192.168.1.110:3000/api';
 
 export const fetchTickets = async () => {
     const res = await fetch(`${API_URL}/ticket` , {
@@ -145,11 +145,10 @@ export const login = async (userData) => {
 
 export const fetchServiceLog = async (service) => {
     try {
-        const res = await fetch(`${API_URL}/service/${service}`, {
+        const res = await fetch(`${API_URL}/logs/${service}` , {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
             },
         });
 
@@ -158,7 +157,7 @@ export const fetchServiceLog = async (service) => {
             throw new Error(errorData.error);
         }
 
-        return res.json();
+        return res.text();
     } catch (error) {
         throw new Error('Erreur lors de la récupération des logs :' + error.message)
     }

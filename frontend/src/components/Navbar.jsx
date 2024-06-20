@@ -21,12 +21,11 @@ export default function Naviguation({ logged, logout }) {
                 <img src={`${process.env.PUBLIC_URL}/AutoTechLogo.png`} className="nav-logo" alt=""></img>
                 <HomeLink />
                 <TicketLink />
-                <LogsBtn />
                 {logged ? (
                     <>
                         <MyTickets />
                         <CreateTicketLink />
-                        
+                        <LogsBtn />
                     </>
                 ) : ('')}
             </ul>
