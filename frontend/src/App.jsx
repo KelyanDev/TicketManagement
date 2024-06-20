@@ -12,6 +12,7 @@ import CreateTicket from './components/CreateTicket';
 import OwnedTickets from './components/OwnedTickets';
 import OwnedOneTicket from './components/ShowOwnOne';
 import ModifyTicket from './components/ModifyTicket';
+import Logs from './components/Logs';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,6 +48,7 @@ function App() {
         <Route path='/mytickets' Component={OwnedTickets} />
         <Route path='/mytickets/:id' Component={OwnedOneTicket} />
         <Route path='/mytickets/edit/:id' Component={ModifyTicket} />
+        <Route path='/logs' Component={Logs} />
       </Routes>
     </div>
     </Router>

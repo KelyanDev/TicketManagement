@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ticketRoutes = require('./routes/ticket');
 const userRoutes = require('./routes/User');
+const logsRoutes = require('./routes/logs')
 const path = require('path');
 app.use(express.json());
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ mongoose.connect('mongodb://User:UserPass@192.168.0.110/Autotech?authSource=Auto
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/ticket', ticketRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/api/logs', logsRoutes)
 
 
 module.exports = app;

@@ -137,3 +137,29 @@ export const login = async (userData) => {
         throw new Error(error.message);
     }
 }
+
+
+
+
+
+
+export const fetchServiceLog = async (service) => {
+    try {
+        const res = await fetch(`${API_URL}/service/${service}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+        });
+
+        if (!res.ok) {
+            const errorData = await res.json();
+            throw new Error(errorData.error);
+        }
+
+        return res.json();
+    } catch (error) {
+        throw new Error('Erreur lors de la récupération des logs :' + error.message)
+    }
+};
