@@ -52,10 +52,13 @@ export default function Logs() {
                     <p key={index} className="log-line">{line}</p>
                 ))}
             </div>
-            <div className="log-error-container">
-                {warnings.map((warning, index) => (
-                    <p key={index} className="log-error-line">{warning}</p>
-                ))}
+            <div className="log-error">
+                <h3 className="log-error-title">Erreurs:</h3>
+                <div className="log-error-container">
+                    {warnings.map((warning, index) => (
+                        <p key={index} className="log-error-line">{warning}</p>
+                    ))}
+                </div>
             </div>
         </div>
     );
