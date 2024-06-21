@@ -1,4 +1,4 @@
-const API_URL = 'http://192.168.1.110:3000/api';
+const API_URL = 'http://192.168.0.110:3000/api';
 
 export const fetchTickets = async () => {
     const res = await fetch(`${API_URL}/ticket` , {
