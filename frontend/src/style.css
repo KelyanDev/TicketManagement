@@ -586,6 +586,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .logs .btn-container {
@@ -612,7 +613,6 @@ body {
 .logs-container {
   width: 80%;
   height: 650px;
-  margin-top: 20px;
   border-radius: 15px;
   padding: 10px;
   background-color: var(--primary-color-dark);
@@ -621,5 +621,19 @@ body {
 
 .log-line {
   color: var(--body-color);
+  font-size: 16px;
+}
+
+.log-error-container {
+  width: 80%;
+  height: 90px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: var(--primary-color-dark);
+  overflow-y: scroll;
+}
+
+.log-error-line {
+  color: var(--delete-hover);
   font-size: 16px;
 }
