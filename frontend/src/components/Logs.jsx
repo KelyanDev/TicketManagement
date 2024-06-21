@@ -23,7 +23,7 @@ export default function Logs() {
     const checkDhcpIssue = (logs) => {
         const lines = logs.split('\n');
         let count = 0;
-        let maxCount = 5;
+        let maxCount = 10;
         const newWarnings = [];
 
         lines.forEach((line, index) => {
