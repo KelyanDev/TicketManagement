@@ -179,24 +179,15 @@ Project Link: [https://github.com/KelyanDev/FluxBiz](https://github.com/KelyanDe
 
 [NodeJS.com]: https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
 [Node-url]: [https://www.w3schools.com/](https://www.w3schools.com/nodejs/default.asp/)
-[Firebase.com]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
-[Firebase-url]: [https://reactjs.org/]()
-
-
-
-* [![NodeJS][NodeJS.com]][Node-url]
-* [![React][React.com]][React-url]
-* [![ReactRouter][ReactRouter.com]][ReactRoute-url]
-* [![Javascript][Javascript.com]][JS-url]
-* [![Express][Express.com]][Express-url]
-* [![MongoDB][MongoDB.com]][MongoDB-url]
-* [![CSS][CSS.com]][CSS-url]
-
-
-  <a href="https://react.dev/learn"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></a>                                  <!-- React -->
-  <a href="https://reactrouter.com/en/main"><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/></a>            <!-- React Router -->
-  <a href="https://www.w3schools.com/js/default.asp"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></a>       <!-- JavaScript -->
-  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white"></a>                          <!-- Express -->
-  <a href="https://www.mongodb.com/fr-fr"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"></a>                        <!-- MongoDB -->
-  <a href="https://www.w3schools.com/html/default.asp"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>                <!-- HTML -->
-  <a href="https://www.w3schools.com/css/default.asp"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>                   <!-- CSS -->
+[React.com]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: [https://reactjs.org/](https://react.dev/learn)
+[ReactRouter.com]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[ReactRoute-url]: [https://reactjs.org/](https://reactrouter.com/en/main)
+[Javascript.com]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[JS-url]: [https://reactjs.org/](https://www.w3schools.com/js/default.asp)
+[Express.com]: https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white
+[Express-url]: [https://reactjs.org/](https://expressjs.com/)
+[MongoDB.com]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]: [https://reactjs.org/](https://www.mongodb.com/fr-fr)
+[CSS.com]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: [https://reactjs.org/](https://www.w3schools.com/css/default.asp)
